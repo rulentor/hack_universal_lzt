@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" href="/pwa-192x192.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aba9">
+  <meta name="msapplication-TileColor" content="#00aba9">
+    <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://unpkg.com/primeflex@3.3.1/primeflex.css"/>
+	<!--link id="theme-link" rel="stylesheet" href="/themes/lara-light-indigo/theme.css" /--> 
+    <!--link id="theme-link" rel="stylesheet" href="/themes/default/theme.css" /-->
+  <link rel='stylesheet' href='https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css'/>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css'/>   
+  <script>
+    (function () {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+  </script>
+</head>
+<body class="font-sans">
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+  <noscript>This website requires JavaScript to function properly. Please enable JavaScript to continue.</noscript>
+</body>
+</html>
