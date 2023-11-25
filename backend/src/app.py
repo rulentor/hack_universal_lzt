@@ -29,18 +29,18 @@ def train():
             y_train = train_data['Referred']
 
         if input_data['model_type'] == 1:
-            models.GradientBoostingRegressorTrain(X_train, y_train)
+            result = models.GradientBoostingRegressorTrain(X_train, y_train)
         elif input_data['model_type'] == 2:
-            models.DecisionTreeRegressorTrain(X_train, y_train)
+            result = models.DecisionTreeRegressorTrain(X_train, y_train)
         elif input_data['model_type'] == 3:
             n_neighbors = 8; weights = 'uniform'; algorithm = 'auto'; leaf_size = 30; p = 2
-            models.KNeighborsRegressorTrain(X_train, y_train, n_neighbors, weights, algorithm, leaf_size, p)
+            result = models.KNeighborsRegressorTrain(X_train, y_train, n_neighbors, weights, algorithm, leaf_size, p)
         elif input_data['model_type'] == 4:
-            models.LinearRegressionTrain(X_train, y_train)
+            result = models.LinearRegressionTrain(X_train, y_train)
         else:
             return jsonify({'error': 'Invalid Model Type!'})
         
-        return jsonify({'message': 'Model Successfully Trained!'})
+        return jsonify({'mse' : result['mse'].tolist(),'mae' : result['mae'].tolist()})
     else:
         return jsonify({'error': 'Invalid JSON Data'}), 400
 
