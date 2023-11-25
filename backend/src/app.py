@@ -33,8 +33,7 @@ def train():
         elif input_data['model_type'] == 2:
             result = models.DecisionTreeRegressorTrain(X_train, y_train)
         elif input_data['model_type'] == 3:
-            n_neighbors = 8; weights = 'uniform'; algorithm = 'auto'; leaf_size = 30; p = 2
-            result = models.KNeighborsRegressorTrain(X_train, y_train, n_neighbors, weights, algorithm, leaf_size, p)
+            result = models.KNeighborsRegressorTrain(X_train, y_train)
         elif input_data['model_type'] == 4:
             result = models.LinearRegressionTrain(X_train, y_train)
         else:
